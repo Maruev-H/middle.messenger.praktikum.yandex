@@ -1,0 +1,85 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/styles.pcss" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <main class="profile">
+      <a href="../main/main.hbs" class="profile__back">
+        <button class="profile__back-btn"><i
+            class="fas fa-solid fa-arrow-left-long"
+          ></i></button>
+      </a>
+      <div class="profile__data">
+        <div class="image">
+          <img src="../../asserts/no-image.png" alt="" />
+          <button>
+            Поменять
+            <br />
+            аватар</button>
+        </div>
+        <h1>Имя пользователя</h1>
+        <div class="point">
+          <p>Почта</p>
+          <span>pochta@yandex.ru</span>
+        </div>
+        <hr />
+        <div class="point">
+          <p>Логин</p>
+          <span>pochta@yandex.ru</span>
+        </div>
+        <hr />
+        <div class="point">
+          <p>Имя</p>
+          <span>first name</span>
+        </div>
+        <hr />
+        <div class="point">
+          <p>Фамилия</p>
+          <span>last name</span>
+        </div>
+        <hr />
+        <div class="point">
+          <p>Имя в чате</p>
+          <span>nickname</span>
+        </div>
+        <hr />
+        <div class="point">
+          <p>Телефон</p>
+          <span>+7 (777) 777 77 77</span>
+        </div>
+        <div class="profile__data-change">
+          <div class="point">
+            <a>Изменить данные</a>
+          </div>
+          <hr />
+          <div class="point">
+            <a>Изменить пароль</a>
+          </div>
+          <hr />
+          <div class="point">
+            <a style="color: red;">Выйти</a>
+          </div>
+        </div>
+      </div>
+      <dialog class="image-chooser">
+        <div>
+          <h1>Загрузите файл</h1>
+          <label for="choose-file">
+            Выбрать файл на
+            <br />
+            компьютере
+            <input id="choose-file" type="file" />
+          </label>
+          <button>Поменять</button></div>
+      </dialog>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/485fbccb06.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

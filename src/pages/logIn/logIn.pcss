@@ -1,0 +1,79 @@
+.login {
+  width: 340px;
+  border-radius: 12px;
+  padding: 50px 30px 30px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.14);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h1 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0 0 57px 0;
+  }
+
+  &__input_block {
+    position: relative;
+
+    label {
+      position: absolute;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 13px;
+      color: rgba(153, 153, 153, 1);
+      top: 7px;
+      left: 0;
+      transition: 0.5s;
+    }
+
+    input:focus:not(:placeholder-shown) ~ label, 
+    input:valid ~ label {
+      top: -10px;
+      font-size: 9px;
+    }
+  }
+
+  &__input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgba(51, 105, 243, 1);
+    width: 100%;
+    margin: 0 0 32px 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    padding: 7px 0;
+    outline: none;
+  }
+
+  &__button {
+    display: flex;
+    width: 100%;
+    height: 37px;
+    border-radius: 8px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .blue_button {
+    background: rgba(51, 105, 243, 1);
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 13px;
+    margin: 45% 0 0;
+  }
+
+  .white_button {
+    background: none;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 11px;
+    color: rgba(51, 105, 243, 1);
+  }
+}
