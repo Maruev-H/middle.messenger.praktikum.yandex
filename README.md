@@ -19,3 +19,7 @@
 Parcel: Сборщик проекта, обеспечивающий автоматическую сборку и обновление в реальном времени.
 Handlebars: Шаблонизатор, который позволяет генерировать HTML-код на основе шаблонов.
 PostCSS Nested: Плагин PostCSS для вложенных стилей в CSS.
+
+Ссылка на Netlify:
+
+https://deploy-preview-6--endearing-chebakia-8e5885.netlify.app/
