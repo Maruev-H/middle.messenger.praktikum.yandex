@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,16 +10,25 @@
     <main class="container">
       <div class="login">
         <h1>Вход</h1>
-        <div class="login__input_block">
-          <input class="login__input" type="text" required/><br />
-          <label>Логин</label>
-        </div>
-        <div class="login__input_block">
-          <input class="login__input" type="password" required/>
-          <label>Пароль</label>
-        </div>
-        <button class="login__button blue_button">Авторизоваться</button>
-        <a class="login__button white_button" href="../signIn/signIn.hbs">Нет аккаунта?</a>
+        <form>
+          <div class="login__input_block">
+            <input name="login" class="login__input" type="text" required /><br
+            />
+            <label>Логин</label>
+          </div>
+          <div class="login__input_block">
+            <input
+              name="password"
+              class="login__input"
+              type="password"
+              required
+            />
+            <label>Пароль</label>
+          </div>
+          <button type="submit" class="login__button blue_button">Авторизоваться</button>
+          <a class="login__button white_button" href="../signIn/signIn.hbs">Нет
+            аккаунта?</a>
+        </form>
       </div>
     </main>
   </body>
