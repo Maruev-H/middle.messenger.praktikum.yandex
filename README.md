@@ -22,4 +22,4 @@ PostCSS Nested: Плагин PostCSS для вложенных стилей в C
 
 Ссылка на Netlify:
 
-https://deploy-preview-6--endearing-chebakia-8e5885.netlify.app/
+https://deploy--endearing-chebakia-8e5885.netlify.app/

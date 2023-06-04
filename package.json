@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel --no-cache ./src/index.html  --port 3000",
+    "start": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint . --ext .ts",
     "stylelint": "stylelint '**/*.{pscc}'",
