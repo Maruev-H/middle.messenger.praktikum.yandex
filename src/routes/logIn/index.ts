@@ -3,7 +3,6 @@ import { ButtonSubmit } from "../../partials/button-submit";
 import { FormComponent } from "../../partials/form-component";
 import { SignInput } from "../../partials/sign-input";
 import Block from "../../utils/Block";
-import sendRequest from "../../utils/SendRequest";
 import template from "./logIn.hbs";
 
 interface FormInput {
