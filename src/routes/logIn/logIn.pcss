@@ -77,3 +77,26 @@
     color: rgba(51, 105, 243, 1);
   }
 }
+
+.invalideInput {
+  border-bottom: 2px solid red;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(3px);
+  }
+}
