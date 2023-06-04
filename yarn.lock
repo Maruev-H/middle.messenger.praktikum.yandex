@@ -4,7 +4,7 @@
 
 "@anikin/parcel-transformer-handlebars-precompile@^1.0.1":
   version "1.0.1"
-  resolved "https://registry.npmjs.org/@anikin/parcel-transformer-handlebars-precompile/-/parcel-transformer-handlebars-precompile-1.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/@anikin/parcel-transformer-handlebars-precompile/-/parcel-transformer-handlebars-precompile-1.0.1.tgz#1ee3339f2e6e78c17a19ff8b9bfb5a6db4c4ca3d"
   integrity sha512-UJ5fHr0KZ4qC1olgQkJLHYO+GS29CgIuKNF9ZoT/U/eyLEWHw7+8UOgoiJudgp2tPqpB71d+zbPfTIO6sXee9g==
 
 "@anikin/parcel-transformer-handlebars@^1.0.9":
