@@ -3,18 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel --no-cache ./src/index.html  --port 3000",
-    "start": "yarn build",
+    "dev": "parcel --no-cache ./src/index.html",
+    "start": "parcel --no-cache ./src/index.hbs --port 3000",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build ./src/index.hbs",
     "eslint": "eslint . --ext .ts",
-    "stylelint": "stylelint '**/*.{pscc}'",
-    "build": "parcel build ./src/index.html"
+    "stylelint": "stylelint '**/*.{pscc}'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@anikin/parcel-transformer-handlebars": "^1.0.9",
     "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
     "eslint": "^8.42.0",
     "parcel": "^2.8.3",
