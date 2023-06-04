@@ -1,61 +1,6 @@
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport"  content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet"  href="../../styles/styles.pcss" />
-    <title>sign-in</title>
-  </head>
-  <body>
-    <main class="container">
-      <div class="signin login">
-        <h1> Регистрация</h1>
-        <form>
-          <div class="login__input_block">
-            <input name="email" class="login__input" type="text" required />
-            <label>Почта</label>
-          </div>
-          <div class="login__input_block">
-            <input name="login" class="login__input" type="text" required />
-            <label>Логин</label>
-          </div>
-          <div class="login__input_block">
-            <input
-              name="first_name"
-              class="login__input"
-              type="text"
-              required
-            />
-            <label>Имя</label>
-          </div>
-          <div class="login__input_block">
-            <input name="second_name" class="login__input" type="text" required />
-            <label>Фамилия</label>
-          </div>
-          <div class="login__input_block">
-            <input name="phone" class="login__input" type="text" required />
-            <label>Телефон</label>
-          </div>
-          <div class="login__input_block">
-            <input
-              name="password"
-              class="login__input"
-              type="password"
-              required
-            />
-            <label>Пароль</label>
-          </div>
-          <div class="login__input_block">
-            <input name="passwordRepeat" class="login__input" type="password" required />
-            <label>Пароль (еще раз)</label>
-          </div>
-          <button class="login__button blue_button">Зарегистрироваться</button>
-          <a
-            class="login__button white_button"
-            href="../logIn/logIn.hbs"
-          >Войти</a>
-        </form>
-      </div>
-    </main>
-  </body>
-</html>
+<main class="container">
+  <div class="signin login">
+    <h1> Регистрация</h1>
+    {{{form}}}
+  </div>
+</main>
