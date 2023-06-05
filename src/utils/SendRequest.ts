@@ -1,5 +1,6 @@
 class HTTPClient {
-  static send(method, url, body = null) {
+
+  static send(method: string, url: string, body: null | Record<string, string> = null) {
 
     if(!url) {
       url = method
@@ -29,19 +30,19 @@ class HTTPClient {
     });
   }
 
-  static get(url) {
+  static get(url: string) {
     return this.send("GET", url);
   }
 
-  static post(url, body) {
+  static post(url: string, body: null | Record<string, string>) {
     return this.send("POST", url, body);
   }
 
-  static put(url, body) {
+  static put(url: string, body: null | Record<string, string>) {
     return this.send("PUT", url, body);
   }
 
-  static delete(url) {
+  static delete(url: string) {
     return this.send("DELETE", url);
   }
 }
