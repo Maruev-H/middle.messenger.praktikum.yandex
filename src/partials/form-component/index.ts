@@ -2,7 +2,7 @@ import Block from "../../utils/Block";
 import template from "./form-component.hbs";
 
 export class FormComponent extends Block {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
   }
 

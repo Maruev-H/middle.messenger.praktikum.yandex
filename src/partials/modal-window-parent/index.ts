@@ -3,9 +3,8 @@ import template from "./dialog.hbs";
 
 
 export class DialogTag extends Block {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
-        console.log(props);  
     }
     render() {
         return this.compile(template, { ...this.props });

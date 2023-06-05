@@ -5,8 +5,9 @@ interface InputProps {
   type?: string;
   label: string;
   name: string;
+  id: string;
   className?: string;
-  events?: Record<string, (event?)=>void>
+  events?: Record<string, (event?: InputEvent)=>void>
 }
 
 export class SignInput extends Block<InputProps> {

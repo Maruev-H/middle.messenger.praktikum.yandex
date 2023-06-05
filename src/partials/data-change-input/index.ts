@@ -1,9 +1,13 @@
 import Block from "../../utils/Block";
-import { Input } from "../input";
 import template from "./data-change-input.hbs";
 
-export class DataChangeInput extends Block {
-  constructor(props) {
+interface IDataChangeInput {
+  label: string;
+  input: object;
+}
+
+export class DataChangeInput extends Block<IDataChangeInput> {
+  constructor(props: IDataChangeInput) {
     super(props);
   }
 

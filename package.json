@@ -7,8 +7,8 @@
     "start": "npm run build && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "parcel build ./src/index.html  --no-cache",
-    "eslint": "eslint . --ext .ts",
-    "stylelint": "stylelint '**/*.{pscc}'"
+    "eslint": "node_modules/.bin/eslint .",
+    "stylelint": "stylelint src/**/*.{pcss,css}"
   },
   "keywords": [],
   "author": "",

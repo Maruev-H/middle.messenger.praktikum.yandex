@@ -3,7 +3,7 @@ import template from "./div.hbs";
 
 
 export class Div extends Block {
-    constructor(props) {
+    constructor(props: any) {
         super(props);        
     }
     render() {

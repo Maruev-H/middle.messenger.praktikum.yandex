@@ -6,7 +6,7 @@ interface IButtonSubmit {
   text?: string;
   className?: string;
   otherData?: any;
-  events?: Record<string, (event?)=>void>
+  events?: Record<string, (event?: Event)=>void>
 }
 
 export class ButtonSubmit extends Block<IButtonSubmit> {

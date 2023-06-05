@@ -4,10 +4,7 @@ import { FormComponent } from "../../partials/form-component";
 import { SignInput } from "../../partials/sign-input";
 import Block from "../../utils/Block";
 import template from "./signIn.hbs";
-
-interface FormComponentProps {
-  formComponents: FormInput[];
-}
+import { nanoid } from "nanoid";
 
 interface FormInput {
   name: string;
@@ -30,35 +27,29 @@ export class SignIn extends Block {
       { name: "passwordRepeat", type: "password", label: "Пароль (еще раз)" },
     ];
 
-    const signInputs = formInputs.map((inputData) => {
-      const signInput = new SignInput({
-        ...inputData,
-      });
-
-      const inputElement = signInput?.getContent()?.querySelector("input");
-
-      const focus = (event) => {
-        const input = event.target as HTMLInputElement;
-        input.classList.remove("invalideInput");
-      };
-
-      const blur = (event) => {
-        const input = event.target as HTMLInputElement;
-        const value = input.value.trim();
-        if (value === "") {
-          input.classList.add("invalideInput");
-          signForm[inputData.name] = "";
-        } else {
-          signForm[inputData.name] = value;
-        }
-      };
-
-      inputElement?.addEventListener("focus", focus);
-
-      inputElement?.addEventListener("blur", blur);
-
-      return signInput;
-    });
+    const signInputs = formInputs.map(
+      (inputData) =>
+        new SignInput({
+          ...inputData,
+          id: nanoid(3),
+          events: {
+            focus: (event) => {
+              const input = event?.target as HTMLInputElement;
+              input.classList.remove("invalideInput");
+            },
+            focusout: (event) => {
+              const input = event?.target as HTMLInputElement;
+              const value = input.value.trim();
+              if (value === "") {
+                input.classList.add("invalideInput");
+                signForm[inputData.name] = "";
+              } else {
+                signForm[inputData.name] = value;
+              }
+            },
+          },
+        })
+    );
 
     super({
       form: new FormComponent({

@@ -7,7 +7,7 @@ interface IInput {
   className?: string;
   type?: string;
   value?: string;
-  events?: Record<string, (event?)=>void>
+  events?: Record<string, (event?: InputEvent)=>void>
 }
 
 export class Input extends Block<IInput> {

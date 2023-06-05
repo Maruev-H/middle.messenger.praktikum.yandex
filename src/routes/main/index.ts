@@ -5,19 +5,17 @@ import Block from "../../utils/Block";
 import template from "./main.hbs";
 
 import sendLocation from "../../asserts/send-location.png";
-import sendFile from "../../asserts/send-file.png";
 import sendVideo from "../../asserts/send-photo.png";
 import { DialogTag } from "../../partials/modal-window-parent";
 import { Div } from "../../partials/div";
-import arrowRightnImg from '../../asserts/right-arrow-angle.png'
-import searchImg from '../../asserts/search.png'
+import arrowRightnImg from "../../asserts/right-arrow-angle.png";
+import searchImg from "../../asserts/search.png";
 
 export class MainPage extends Block {
   constructor() {
     let message = "";
 
     super({
-
       arrowRightImg: arrowRightnImg,
       searchImg: searchImg,
 
@@ -35,19 +33,20 @@ export class MainPage extends Block {
         placeholder: "Сообщение",
         events: {
           focus: (event) => {
-            event.target.classList.remove("invalidSendMessageInput");
+            (event?.target as HTMLInputElement).classList?.remove("invalidSendMessageInput");
           },
           blur: (event) => {
-            const value = event.target.value;
+            const value = (event?.target as HTMLInputElement).value;
 
             if (!validateMessage(value)) {
-              event.target.classList.add("invalidSendMessageInput");
+              (event?.target as HTMLInputElement).classList?.add("invalidSendMessageInput");
             } else {
-              event.target.classList.remove("invalidSendMessageInput");
+              (event?.target as HTMLInputElement).classList?.remove("invalidSendMessageInput");              
             }
           },
           input: (event) => {
-            message = event.target.value;
+            const inputElement = event?.target as HTMLInputElement;
+            message = inputElement.value;
           },
         },
       }),
@@ -58,7 +57,6 @@ export class MainPage extends Block {
           new Div({
             className: "btns",
             divChildrens: [
-
               new ButtonSubmit({
                 otherData:
                   '<span class="plus"><i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i></span>',
@@ -82,7 +80,6 @@ export class MainPage extends Block {
         dialogChildrens: [
           new Div({
             divChildrens: [
-
               new ButtonSubmit({
                 otherData: `<img src=${sendVideo} alt="" />`,
                 text: "Фото или видео",
@@ -140,7 +137,7 @@ export class MainPage extends Block {
   }
 }
 
-function validateMessage(value) {
+function validateMessage(value: string) {
   const pattern = /<|>|&/;
   return !pattern.test(value);
 }

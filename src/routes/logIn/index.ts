@@ -4,6 +4,7 @@ import { FormComponent } from "../../partials/form-component";
 import { SignInput } from "../../partials/sign-input";
 import Block from "../../utils/Block";
 import template from "./logIn.hbs";
+import { nanoid } from 'nanoid';
 
 interface FormInput {
   name: string;
@@ -21,16 +22,17 @@ export class LoginPage extends Block {
     const signInputs = formInputs.map((inputData) => {
       const signInput = new SignInput({
         ...inputData,
+        id: nanoid(3)
       });
 
       const inputElement = signInput?.getContent()?.querySelector("input");
 
-      const focus = (event) => {
+      const focus = (event:Event) => {
         const input = event.target as HTMLInputElement;
         input.classList.remove("invalideInput");
       };
 
-      const blur = (event) => {
+      const blur = (event:Event) => {
         const input = event.target as HTMLInputElement;
         const value = input.value.trim();
         if (value === "") {

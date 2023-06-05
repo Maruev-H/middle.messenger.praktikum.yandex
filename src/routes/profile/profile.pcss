@@ -1,5 +1,57 @@
 @import "./change/profile-change.pcss";
 
+.image-chooser {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+
+  div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 257px;
+    width: 340px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 40px 30px;
+    border: none;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: rgba(51, 105, 243, 1);
+    text-decoration: underline;
+  }
+
+  button {
+    height: 37px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background: rgba(51, 105, 243, 1);
+    color: white;
+  }
+}
+
 .profile {
   display: flex;
 
@@ -87,6 +139,19 @@
 
     position: relative;
 
+    .user-data {
+      border: none;
+      text-align: end;
+      flex-grow: 1;
+      outline: none;
+      color: rgba(153, 153, 153, 1);
+    }
+
+    .text {
+      margin: 0;
+      padding: 0;
+    }
+
     &:focus-within {
       .text {
         display: none;
@@ -95,22 +160,6 @@
         text-align: start;
         color: black;
       }
-    }
-
-    .user-data {
-      border: none;
-      text-align: end;
-      flex-grow: 1;
-      outline: none;
-    }
-
-    .text {
-      margin: 0;
-      padding: 0;
-    }
-
-    .user-data {
-      color: rgba(153, 153, 153, 1);
     }
 
     &:not(:last-child) {
@@ -125,57 +174,5 @@
     a {
       color: blue;
     }
-  }
-}
-
-.image-chooser {
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
-
-  div {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 257px;
-    width: 340px;
-    border-radius: 12px;
-    text-align: center;
-    padding: 40px 30px;
-    border: none;
-    background-color: white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 20px;
-  }
-
-  input {
-    display: none;
-  }
-
-  label {
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
-    color: rgba(51, 105, 243, 1);
-    text-decoration: underline;
-  }
-
-  button {
-    height: 37px;
-    width: 100%;
-    border-radius: 8px;
-    border: none;
-    background: rgba(51, 105, 243, 1);
-    color: white;
   }
 }
