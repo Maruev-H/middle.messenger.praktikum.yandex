@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-  "outDir": "dist",
-  "target": "es2016",
-  "declaration": false,
-  "module": "commonjs",
-  "strictNullChecks": true,
-  "sourceMap": true,
- }
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "lib": ["esnext", "dom"]
+  }
 }
