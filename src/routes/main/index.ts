@@ -7,13 +7,20 @@ import template from "./main.hbs";
 import sendLocation from "../../asserts/send-location.png";
 import sendFile from "../../asserts/send-file.png";
 import sendVideo from "../../asserts/send-photo.png";
+import { DialogTag } from "../../partials/modal-window-parent";
+import { Div } from "../../partials/div";
+import arrowRightnImg from '../../asserts/right-arrow-angle.png'
+import searchImg from '../../asserts/search.png'
 
 export class MainPage extends Block {
   constructor() {
-
-    let message = ''
+    let message = "";
 
     super({
+
+      arrowRightImg: arrowRightnImg,
+      searchImg: searchImg,
+
       userCard: new ChatUserCard({
         username: "Имя пользователя",
         lastMessage: "последнее сообщение",
@@ -31,7 +38,6 @@ export class MainPage extends Block {
             event.target.classList.remove("invalidSendMessageInput");
           },
           blur: (event) => {
-
             const value = event.target.value;
 
             if (!validateMessage(value)) {
@@ -41,9 +47,64 @@ export class MainPage extends Block {
             }
           },
           input: (event) => {
-            message = event.target.value
+            message = event.target.value;
           },
         },
+      }),
+
+      modalWindowChatSettings: new DialogTag({
+        className: "chat-content__settings-modal",
+        dialogChildrens: [
+          new Div({
+            className: "btns",
+            divChildrens: [
+
+              new ButtonSubmit({
+                otherData:
+                  '<span class="plus"><i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i></span>',
+                className: "add-user",
+                text: "Добавить пользователя",
+              }),
+
+              new ButtonSubmit({
+                otherData:
+                  '<span class="plus rotate"><i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i></span>',
+                className: "remove-user",
+                text: "Удалить пользователя",
+              }),
+            ],
+          }),
+        ],
+      }),
+
+      modalWindowSendFile: new DialogTag({
+        className: "chat-content__send-file",
+        dialogChildrens: [
+          new Div({
+            divChildrens: [
+
+              new ButtonSubmit({
+                otherData: `<img src=${sendVideo} alt="" />`,
+                text: "Фото или видео",
+              }),
+
+              new ButtonSubmit({
+                otherData: `<img src=${sendVideo} alt="" />`,
+                text: "Фото или видео",
+              }),
+
+              new ButtonSubmit({
+                otherData: `<img src=${sendLocation} alt="" />`,
+                text: "Локация",
+              }),
+            ],
+          }),
+        ],
+      }),
+
+      chatsSearchInput: new Input({
+        type: "text",
+        className: "chats__search",
       }),
 
       sendMessageButton: new ButtonSubmit({
@@ -52,29 +113,24 @@ export class MainPage extends Block {
         events: {
           click: () => {
             console.log(message);
-            
-          }
-        }
+          },
+        },
+      }),
+
+      chatContentSettingsButton: new ButtonSubmit({
+        otherData:
+          '<div class="dots"><span class="first"></span><span class="second"></span><span class="third"></span></div>',
+        className: "chat-content__settings",
+        events: {
+          click: () => {
+            console.log("chat-content-settings-btn has been clicked");
+          },
+        },
       }),
 
       chooseFileButton: new ButtonSubmit({
         otherData: '<i class="fas fa-thin fa-paperclip"></i>',
         className: "chat-content__choose-file-btn",
-      }),
-
-      sendVideoButton: new ButtonSubmit({
-        otherData: `<img src=${sendVideo} alt="" />`,
-        text: "Фото или видео",
-      }),
-
-      sendFileButton: new ButtonSubmit({
-        otherData: `<img src=${sendFile} alt="" />`,
-        text: "Файл",
-      }),
-
-      sendLocationButton: new ButtonSubmit({
-        otherData: `<img src=${sendLocation} alt="" />`,
-        text: "Локация",
       }),
     });
   }

@@ -1,81 +1,12 @@
 <main class="profile">
-  <a href="/main" class="profile__back">
+  <a href="/profile" class="profile__back">
     <button class="profile__back-btn"><i
         class="fas fa-solid fa-arrow-left-long"
       ></i></button>
   </a>
   <div class="profile__data">
-    <div class="image">
-      <img src="../../../asserts/no-image.png" alt="" />
-      <button>
-        Поменять
-        <br />
-        аватар</button>
-    </div>
-    <form class="change-form">
-      <div class="point">
-        <label class="text">Почта</label>
-        <input
-          name="email"
-          type="text"
-          class="user-data"
-          value="pochta@yandex.ru"
-        />
-      </div>
-      <hr />
-      <div class="point">
-        <label class="text">Логин</label>
-        <input
-          name="login"
-          type="text"
-          class="user-data"
-          value="pochta@yandex.ru"
-        />
-      </div>
-      <hr />
-      <div class="point">
-        <label class="text">Имя</label>
-        <input
-          name="first_name"
-          type="text"
-          class="user-data"
-          value="first  name"
-        />
-      </div>
-      <hr />
-      <div class="point">
-        <label class="text">Фамилия</label>
-        <input
-          name="second_name"
-          type="text"
-          class="user-data"
-          value="last  name"
-        />
-      </div>
-      <hr />
-      <div class="point">
-        <label class="text">Имя в чате</label>
-        <input
-          name="display_name"
-          type="text"
-          class="user-data"
-          value="nickname"
-        />
-      </div>
-      <hr />
-      <div class="point">
-        <label class="text">Телефон</label>
-        <input
-          name="phone"
-          type="text"
-          class="user-data"
-          value="+7 (777) 777 77 77"
-        />
-      </div>
-      <div class="profile__data-change">
-        <button class="change-btn" type="submit">Сохранить</button>
-      </div>
-    </form>
+    {{{avatar}}}
+   {{{profileDataChangeForm}}}
   </div>
   {{{changeAvatarModalWindow}}}
 </main>

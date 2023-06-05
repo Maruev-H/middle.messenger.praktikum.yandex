@@ -4,13 +4,13 @@
       <div class="chats__header">
         <a href="../profile">Профиль
           <img
-            src="../../asserts/right-arrow-angle.png"
+            src="{{arrowRightImg}}"
             alt="стрелка  вправо"
           />
         </a>
         <div class="chats__search__block">
-          <input class="chats__search" type="text" required />
-          <label><img src="../../asserts/search.png" alt="" />
+          {{{chatsSearchInput}}}
+          <label><img src="{{searchImg}}" alt="" />
             <span>Поиск</span>
           </label>
         </div>
@@ -21,42 +21,15 @@
         <div class="chat-content__header">
             <div class="chat-content__img"></div>
             <div class="chat-content__username">Username</div>
-            <button class="chat-content__settings">
-                <div class="dots">
-                  <span class="first"></span>
-                  <span class="second"></span>
-                  <span class="third"></span>
-                </div>
-            </button>
-                <dialog class="chat-content__settings-modal">
-                  <div class="btns">
-                    <button class="add-user">
-                    <span class="plus">
-                      <i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i>
-                    </span>
-                    Добавить пользователя
-                  </button><br>
-                  <button class="remove-user">
-                    <span class="plus rotate">
-                      <i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i>
-                    </span>
-                    Удалить пользователя
-                  </button>
-                </div>
-            </dialog>
+            {{{chatContentSettingsButton}}}
+            {{{modalWindowChatSettings}}}
         </div>
         <div class="chat-content__messages"></div>
         <div class="chat-content__footer">
             {{{chooseFileButton}}}
             {{{sendMessageInput}}}
             {{{sendMessageButton}}}
-            <dialog class="chat-content__send-file">
-              <div>
-                {{{sendVideoButton}}}
-                {{{sendFileButton}}}
-                {{{sendLocationButton}}}
-              </div>
-            </dialog>
+            {{{modalWindowSendFile}}}
         </div>
     </div>
 </main>

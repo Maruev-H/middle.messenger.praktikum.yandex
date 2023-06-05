@@ -1,5 +1,11 @@
 class HTTPClient {
   static send(method, url, body = null) {
+
+    if(!url) {
+      url = method
+      method = "GET"
+    }
+
     return new Promise((resolve, reject) => {
       const xhr = new XMLHttpRequest();
 

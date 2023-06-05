@@ -2,6 +2,7 @@ import Block from "../../utils/Block";
 import template from "./button-submit.hbs";
 
 interface IButtonSubmit {
+  type?: string;
   text?: string;
   className?: string;
   otherData?: any;

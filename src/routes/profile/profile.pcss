@@ -1,4 +1,4 @@
-@import './change/profile-change.pcss';
+@import "./change/profile-change.pcss";
 
 .profile {
   display: flex;
@@ -85,6 +85,25 @@
     font-weight: 500;
     line-height: 13px;
 
+    position: relative;
+
+    &:focus-within {
+      .text {
+        display: none;
+      }
+      input {
+        text-align: start;
+        color: black;
+      }
+    }
+
+    .user-data {
+      border: none;
+      text-align: end;
+      flex-grow: 1;
+      outline: none;
+    }
+
     .text {
       margin: 0;
       padding: 0;
@@ -92,6 +111,11 @@
 
     .user-data {
       color: rgba(153, 153, 153, 1);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(234, 234, 234, 1);
+      margin-bottom: 8px;
     }
   }
 

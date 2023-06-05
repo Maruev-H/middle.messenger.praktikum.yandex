@@ -6,6 +6,7 @@ interface IInput {
   name?: string;
   className?: string;
   type?: string;
+  value?: string;
   events?: Record<string, (event?)=>void>
 }
 

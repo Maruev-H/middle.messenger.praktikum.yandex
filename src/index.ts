@@ -15,8 +15,8 @@ const routes: Record<string, any> = {
   "/main": MainPage,
   "/log-in": LoginPage,
   "/profile": ProfilePage,
-  "/profile-data-change": ProfileDataChangePage,
   "/password-change": PasswordChangePage,
+  "/profile-data-change": ProfileDataChangePage,
   "/errors/404": Error404Page,
   "/errors/505": Error505Page,
 };

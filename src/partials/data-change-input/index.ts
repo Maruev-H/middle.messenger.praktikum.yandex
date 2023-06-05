@@ -1,7 +1,8 @@
 import Block from "../../utils/Block";
-import template from "./form-component.hbs";
+import { Input } from "../input";
+import template from "./data-change-input.hbs";
 
-export class FormComponent extends Block {
+export class DataChangeInput extends Block {
   constructor(props) {
     super(props);
   }
