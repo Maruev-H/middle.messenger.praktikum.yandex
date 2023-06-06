@@ -94,8 +94,8 @@ export class SignIn extends Block {
                       acc += 1
                     } else {
                       input.classList.remove("invalideInput");
-                      errorElem!.textContent = "";
                       signForm[inputData.name] = value;
+                      errorElem!.textContent = "";
                     }
                     
                     return acc;

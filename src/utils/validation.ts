@@ -3,14 +3,14 @@ function validateEmail(value: string): boolean {
   return emailRegex.test(value);
 }
 
-function validateLogin(value: string): boolean {
-  const loginRegex = /^[a-zA-Z0-9]+$/;
-  return loginRegex.test(value);
-}
-
 function validatePassword(value: string): boolean {
   const passwordRegex = /^[a-zA-Z0-9]+$/;
   return passwordRegex.test(value);
+}
+
+function validateLogin(value: string): boolean {
+  const loginRegex = /^[a-zA-Z0-9]+$/;
+  return loginRegex.test(value);
 }
 
 function validatePasswordMatch(

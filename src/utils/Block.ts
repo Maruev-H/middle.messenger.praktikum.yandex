@@ -67,6 +67,7 @@ class Block<P extends Record<string, any> = any> {
     Object.keys(events).forEach(eventName => {
       this._element?.removeEventListener(eventName, events[eventName]);
     });
+    
   }
 
   _registerEvents(eventBus: EventBus) {
