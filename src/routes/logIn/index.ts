@@ -4,7 +4,8 @@ import { FormComponent } from "../../partials/form-component";
 import { SignInput } from "../../partials/sign-input";
 import Block from "../../utils/Block";
 import template from "./logIn.hbs";
-import { nanoid } from 'nanoid';
+import { getErrorText } from "../../utils/validation";
+import { nanoid } from "nanoid";
 
 interface FormInput {
   name: string;
@@ -22,31 +23,40 @@ export class LoginPage extends Block {
     const signInputs = formInputs.map((inputData) => {
       const signInput = new SignInput({
         ...inputData,
-        id: nanoid(3)
+        id: nanoid(3),
+        events: {
+          focus: (event) => {
+            const input = event?.target as HTMLInputElement;
+            input.classList.remove("invalideInput");
+            input.value = "";
+            const errorElem =
+              input.parentElement?.querySelector(".error_message");
+            errorElem!.textContent = "";
+          },
+
+          focusout: (event) => {
+            const input = event?.target as HTMLInputElement;
+            const value = input.value.trim();
+            const errorElem =
+              input.parentElement?.querySelector(".error_message");
+            const errorText = getErrorText(
+              inputData.name,
+              value,
+              signForm["password"]
+            );
+
+            if (errorText !== "") {
+              input.classList.add("invalideInput");
+              errorElem!.textContent = errorText;
+              signForm[inputData.name] = "";
+            } else {
+              input.classList.remove("invalideInput");
+              errorElem!.textContent = "";
+              signForm[inputData.name] = value;
+            }
+          },
+        },
       });
-
-      const inputElement = signInput?.getContent()?.querySelector("input");
-
-      const focus = (event:Event) => {
-        const input = event.target as HTMLInputElement;
-        input.classList.remove("invalideInput");
-      };
-
-      const blur = (event:Event) => {
-        const input = event.target as HTMLInputElement;
-        const value = input.value.trim();
-        if (value === "") {
-          input.classList.add("invalideInput");
-          signForm[inputData.name] = "";
-        } else {
-          signForm[inputData.name] = value;
-        }
-      };
-
-      inputElement?.addEventListener("focus", focus);
-
-      inputElement?.addEventListener("blur", blur);
-
       return signInput;
     });
 
@@ -67,11 +77,28 @@ export class LoginPage extends Block {
                       `input[name=${inputData.name}]`
                     ) as HTMLInputElement;
 
-                    if (input.value.trim() === "") {
+                    const value = input.value;
+
+                    const errorElem =
+                      input.parentElement?.querySelector(".error_message");
+
+                    const errorText = getErrorText(
+                      inputData.name,
+                      value,
+                      signForm["password"] || ""
+                    );
+
+                    if (errorText !== "") {
                       input.classList.add("invalideInput");
+                      errorElem!.textContent = errorText;
                       signForm[inputData.name] = "";
                       acc += 1;
+                    } else {
+                      input.classList.remove("invalideInput");
+                      errorElem!.textContent = "";
+                      signForm[inputData.name] = value;
                     }
+
                     return acc;
                   },
                   0

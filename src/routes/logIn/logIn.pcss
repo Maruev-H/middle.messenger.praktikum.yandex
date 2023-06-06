@@ -24,7 +24,7 @@
       font-size: 13px;
       font-weight: 500;
       line-height: 13px;
-      color: rgba(153, 153, 153, 1);
+      color: var(--gray-color);
       top: 7px;
       left: 0;
       transition: 0.5s;
@@ -40,7 +40,7 @@
   &__input {
     background: none;
     border: none;
-    border-bottom: 2px solid rgba(51, 105, 243, 1);
+    border-bottom: 2px solid var(--blue-color);;
     width: 100%;
     margin: 0 0 32px 0;
     font-size: 13px;
@@ -61,7 +61,7 @@
   }
 
   .blue_button {
-    background: rgba(51, 105, 243, 1);
+    background: var(--blue-color);
     color: white;
     font-size: 13px;
     font-weight: 500;
@@ -74,8 +74,15 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 11px;
-    color: rgba(51, 105, 243, 1);
+    color: var(--blue-color);
   }
+}
+
+.error_message {
+  position: absolute;
+  bottom: 8px;
+  font-size: 9px;
+  color: red;
 }
 
 .invalideInput {

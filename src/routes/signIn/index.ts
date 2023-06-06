@@ -3,6 +3,9 @@ import { ButtonSubmit } from "../../partials/button-submit";
 import { FormComponent } from "../../partials/form-component";
 import { SignInput } from "../../partials/sign-input";
 import Block from "../../utils/Block";
+import {
+  getErrorText
+} from "../../utils/validation";
 import template from "./signIn.hbs";
 import { nanoid } from "nanoid";
 
@@ -27,29 +30,41 @@ export class SignIn extends Block {
       { name: "passwordRepeat", type: "password", label: "Пароль (еще раз)" },
     ];
 
-    const signInputs = formInputs.map(
-      (inputData) =>
-        new SignInput({
-          ...inputData,
-          id: nanoid(3),
-          events: {
-            focus: (event) => {
-              const input = event?.target as HTMLInputElement;
-              input.classList.remove("invalideInput");
-            },
-            focusout: (event) => {
-              const input = event?.target as HTMLInputElement;
-              const value = input.value.trim();
-              if (value === "") {
-                input.classList.add("invalideInput");
-                signForm[inputData.name] = "";
-              } else {
-                signForm[inputData.name] = value;
-              }
-            },
+    const signInputs = formInputs.map((inputData) => {
+      const signInput = new SignInput({
+        ...inputData,
+        id: nanoid(3),
+        events: {
+          focus: (event) => {
+            const input = event?.target as HTMLInputElement;
+            input.classList.remove("invalideInput");
+            input.value = "";
+            const errorElem =
+              input.parentElement?.querySelector(".error_message");
+            errorElem!.textContent = "";
           },
-        })
-    );
+          focusout: (event) => {
+            const input = event?.target as HTMLInputElement;
+            const value = input.value.trim();
+            const errorElem = input.parentElement?.querySelector(".error_message");
+            const errorText = getErrorText(inputData.name, value, signForm['password']);
+          
+            if (errorText !== "") {
+              input.classList.add("invalideInput");
+              errorElem!.textContent = errorText;
+              signForm[inputData.name] = "";
+            } else {
+              input.classList.remove("invalideInput");
+              errorElem!.textContent = "";
+              signForm[inputData.name] = value;
+            }
+          },
+
+         
+        },
+      });
+      return signInput;
+    });
 
     super({
       form: new FormComponent({
@@ -66,11 +81,23 @@ export class SignIn extends Block {
                       `input[name=${inputData.name}]`
                     ) as HTMLInputElement;
 
-                    if (input.value.trim() === "") {
+                    const value = input.value
+
+                    const errorElem = input.parentElement?.querySelector(".error_message");
+
+                    const errorText = getErrorText(inputData.name, value, signForm['password'] || '')
+
+                    if (errorText !== "") {
                       input.classList.add("invalideInput");
+                      errorElem!.textContent = errorText;
                       signForm[inputData.name] = "";
-                      acc += 1;
+                      acc += 1
+                    } else {
+                      input.classList.remove("invalideInput");
+                      errorElem!.textContent = "";
+                      signForm[inputData.name] = value;
                     }
+                    
                     return acc;
                   },
                   0

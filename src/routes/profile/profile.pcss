@@ -38,7 +38,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 16px;
-    color: rgba(51, 105, 243, 1);
+    color: var(--blue-color);
     text-decoration: underline;
   }
 
@@ -47,7 +47,7 @@
     width: 100%;
     border-radius: 8px;
     border: none;
-    background: rgba(51, 105, 243, 1);
+    background: var(--blue-color);
     color: white;
   }
 }
@@ -61,7 +61,7 @@
     width: 5%;
     height: 100vh;
     place-items: center;
-    border-right: 1px solid rgba(234, 234, 234, 1);
+    border-right: 1px solid var(--border-whitish-color);
   }
 
   &__back-btn {
@@ -69,7 +69,7 @@
     place-items: center;
     border: none;
     border-radius: 100%;
-    background: rgba(51, 105, 243, 1);
+    background: var(--blue-color);
     height: 28px;
     width: 28px;
     font-size: 16px;
@@ -120,14 +120,6 @@
     line-height: 16px;
   }
 
-  hr {
-    margin: 0;
-    color: rgba(234, 234, 234, 1);
-    border: none;
-    background-color: rgba(234, 234, 234, 1);
-    height: 1px;
-  }
-
   .point {
     display: flex;
     justify-content: space-between;
@@ -144,7 +136,7 @@
       text-align: end;
       flex-grow: 1;
       outline: none;
-      color: rgba(153, 153, 153, 1);
+      color: var(--gray-color);
     }
 
     .text {
@@ -163,7 +155,7 @@
     }
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgba(234, 234, 234, 1);
+      border-bottom: 1px solid var(--border-whitish-color);
       margin-bottom: 8px;
     }
   }
