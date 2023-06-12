@@ -2,7 +2,7 @@
   width: 340px;
   border-radius: 12px;
   padding: 50px 30px 30px;
-  box-shadow: 0px 0px  6px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.14);
   text-align: center;
   position: absolute;
   top: 50%;
@@ -24,14 +24,14 @@
       font-size: 13px;
       font-weight: 500;
       line-height: 13px;
-      color: rgba(153, 153, 153, 1);
+      color: var(--gray-color);
       top: 7px;
       left: 0;
       transition: 0.5s;
     }
 
-    input:focus:not(:placeholder-shown) ~ label, 
-    input:valid ~ label {
+    input:valid ~ label,
+    input:focus:not(:placeholder-shown) ~ label {
       top: -10px;
       font-size: 9px;
     }
@@ -40,7 +40,7 @@
   &__input {
     background: none;
     border: none;
-    border-bottom: 2px solid rgba(51, 105, 243, 1);
+    border-bottom: 2px solid var(--blue-color);;
     width: 100%;
     margin: 0 0 32px 0;
     font-size: 13px;
@@ -61,7 +61,7 @@
   }
 
   .blue_button {
-    background: rgba(51, 105, 243, 1);
+    background: var(--blue-color);
     color: white;
     font-size: 13px;
     font-weight: 500;
@@ -74,6 +74,36 @@
     font-size: 11px;
     font-weight: 500;
     line-height: 11px;
-    color: rgba(51, 105, 243, 1);
+    color: var(--blue-color);
+  }
+}
+
+.error_message {
+  position: absolute;
+  bottom: 8px;
+  font-size: 9px;
+  color: red;
+}
+
+.invalideInput {
+  border-bottom: 2px solid red;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(3px);
   }
 }

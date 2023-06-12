@@ -1,88 +1,35 @@
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styles/styles.pcss" />
-    <title>main</title>
-  </head>
-  <body>
-    <main class="container">
-      <div  class="chat-menu">
-        <div class="chats">
-          <div class="chats__header">
-            <a href="../profile/profile.hbs">Профиль
-              <img
-                src="../../asserts/right-arrow-angle.png"
-                alt="стрелка  вправо"
-              />
-            </a>
-            <div class="chats__search__block">
-              <input class="chats__search" type="text" required />
-              <label><img src="../../asserts/search.png" alt="" />
-                <span>Поиск</span>
-              </label>
-            </div>
-          </div>
-        <div class="chat-card">
-            <div class="chat-card__img"></div>
-            <div class="chat-card__description">
-                <div class="chat-card__username">Имя пользователя</div>
-                <div class="chat-card__last-message"> Последнее сообщение</div>
-            </div>
-            <div class="chat-card__other-info">
-                <div class="chat-card__time">00:00</div>
-                <div class="chat-card__amount">2</div>
-            </div>
+<main class="container">
+  <div  class="chat-menu">
+    <div class="chats">
+      <div class="chats__header">
+        <a href="../profile">Профиль
+          <img
+            src="{{arrowRightImg}}"
+            alt="стрелка  вправо"
+          />
+        </a>
+        <div class="chats__search__block">
+          {{{chatsSearchInput}}}
+          <label><img src="{{searchImg}}" alt="" />
+            <span>Поиск</span>
+          </label>
         </div>
       </div>
-        <div class="chat-content">
-            <div class="chat-content__header">
-                <div class="chat-content__img"></div>
-                <div class="chat-content__username">Username</div>
-                <button class="chat-content__settings">
-                    <div class="dots">
-                      <span class="first"></span>
-                      <span class="second"></span>
-                      <span class="third"></span>
-                    </div>
-                </button>
-                    <dialog class="chat-content__settings-modal">
-                      <div class="btns">
-                        <button class="add-user">
-                        <span class="plus">
-                          <i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i>
-                        </span>
-                        Добавить пользователя
-                      </button><br>
-                      <button class="remove-user">
-                        <span class="plus rotate">
-                          <i class="fas fa-sharp fa-light fa-circle-plus fa-flip-both"></i>
-                        </span>
-                        Удалить пользователя
-                      </button>
-                    </div>
-                </dialog>
-            </div>
-            <div class="chat-content__messages"></div>
-            <div class="chat-content__footer">
-               <button class="chat-content__choose-file-btn">
-                <i class="fas fa-thin fa-paperclip"></i>
-               </button>
-               <input placeholder="Сообщение" type="text" class="chat-content__input" />
-               <button class="chat-content__send-message-btn">
-                <i class="fas fa-solid fa-arrow-right-long"></i>
-               </button>
-               <dialog class="chat-content__send-file">
-                  <div>
-                    <button><img src="../../asserts/send-photo.png" alt="" />Фото или видео</button>
-                    <button><img src="../../asserts/send-file.png" alt="" />Файл</button>
-                    <button><img src="../../asserts/send-location.png" alt="" />Локация</button>
-                  </div>
-               </dialog>
-            </div>
+    {{{userCard}}}
+  </div>
+    <div class="chat-content">
+        <div class="chat-content__header">
+            <div class="chat-content__img"></div>
+            <div class="chat-content__username">Username</div>
+            {{{chatContentSettingsButton}}}
+            {{{modalWindowChatSettings}}}
         </div>
-    </main>
-    <script src="https://kit.fontawesome.com/485fbccb06.js" crossorigin="anonymous"></script>
-  </body>
-</html>
+        <div class="chat-content__messages"></div>
+        <div class="chat-content__footer">
+            {{{chooseFileButton}}}
+            {{{sendMessageInput}}}
+            {{{sendMessageButton}}}
+            {{{modalWindowSendFile}}}
+        </div>
+    </div>
+</main>
